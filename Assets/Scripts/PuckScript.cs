@@ -26,14 +26,14 @@ public class PuckScript : MonoBehaviour {
             {
                 ScoreScriptInstance.Increment(ScoreScript.Score.PlayerScore);
                 WasGoal = true;
-                audioManager.PlayGoal();
+                //audioManager.PlayGoal();
                 StartCoroutine(ResetPuck(false));
             }
             else if (other.tag == "PlayerGoal")
             {
                 ScoreScriptInstance.Increment(ScoreScript.Score.AiScore);
                 WasGoal = true;
-                audioManager.PlayGoal();
+                //audioManager.PlayGoal();
                 StartCoroutine(ResetPuck(true));
             }
         }
@@ -41,7 +41,7 @@ public class PuckScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        audioManager.PlayPuckCollision();
+        //audioManager.PlayPuckCollision();
     }
 
     private IEnumerator ResetPuck(bool didAiScore)

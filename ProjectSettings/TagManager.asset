@@ -8,6 +8,7 @@ TagManager:
   - PlayerScore
   - PlayerGoal
   - AiGoal
+  - Puck
   layers:
   - Default
   - TransparentFX
