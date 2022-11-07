@@ -42,7 +42,16 @@ public class PuckScript : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         audioManager.PlayPuckCollision();
+
+        if (collision.collider.CompareTag("Player"))
+        {
+            MaxSpeed += 1;
+        }
     }
+
+    
+
+
 
     private IEnumerator ResetPuck(bool didAiScore)
     {
