@@ -5,7 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-  public void PlayGame()
+
+    public GameObject pausePanel;
+
+
+    private void Start()
+    {
+        pausePanel.SetActive(false);
+    }
+
+    public void PlayGame()
     {
         SceneManager.LoadScene(1);
     }
@@ -14,5 +23,22 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Viva Maduro");
         Application.Quit();
+    }
+
+    public void GoMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Pausar()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void ContinueGame()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

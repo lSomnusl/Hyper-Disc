@@ -1,9 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ScoreScript : MonoBehaviour
 {
+
+    public GameObject endGamePanel;
+
+    private void Start()
+    {
+        endGamePanel.SetActive(false);
+    }
+
     public enum Score
     {
         AiScore, PlayerScore
@@ -20,5 +30,41 @@ public class ScoreScript : MonoBehaviour
             PlayerScoreTxt.text = (++playerScore).ToString();
     }
 
+    private void Update()
+    {
+        if (aiScore == 7)
+        {
+            StartCoroutine(PurpleWin());
+        }
+
+        if (playerScore == 7)
+        {
+            StartCoroutine(BlueWin());
+        }
+    }
+
+    IEnumerator PurpleWin()
+    {
+       //Insertar Animacion morado ganador
+
+        yield return new WaitForSeconds(2f);
+
+        endGamePanel.SetActive(true);
+        Time.timeScale = 0f;
+
+
+    }
+
+    IEnumerator BlueWin()
+    {
+        //Insertar Animacion azul ganador
+
+        yield return new WaitForSeconds(2f);
+
+        endGamePanel.SetActive(true);
+        Time.timeScale = 0f;
+
+
+    }
 
 }
