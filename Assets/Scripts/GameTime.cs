@@ -29,7 +29,7 @@ public class GameTime : MonoBehaviour
     {
         difficultyTime += Time.deltaTime;
 
-        if(difficultyTime >= 15)
+        if(difficultyTime >= 60)
         {
             SpawnEnemies();
         }

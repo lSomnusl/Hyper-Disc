@@ -32,12 +32,12 @@ public class ScoreScript : MonoBehaviour
 
     private void Update()
     {
-        if (aiScore == 7)
+        if (aiScore == 1)
         {
             StartCoroutine(PurpleWin());
         }
 
-        if (playerScore == 7)
+        if (playerScore == 1)
         {
             StartCoroutine(BlueWin());
         }
