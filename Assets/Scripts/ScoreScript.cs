@@ -6,12 +6,13 @@ using System.Collections.Generic;
 
 public class ScoreScript : MonoBehaviour
 {
-
+    private Animator animator;
     public GameObject endGamePanel;
 
     private void Start()
     {
         endGamePanel.SetActive(false);
+        animator = GetComponent<Animator>();
     }
 
     public enum Score
@@ -32,12 +33,12 @@ public class ScoreScript : MonoBehaviour
 
     private void Update()
     {
-        if (aiScore == 1)
+        if (aiScore == 7)
         {
             StartCoroutine(PurpleWin());
         }
 
-        if (playerScore == 1)
+        if (playerScore == 7)
         {
             StartCoroutine(BlueWin());
         }
@@ -45,10 +46,10 @@ public class ScoreScript : MonoBehaviour
 
     IEnumerator PurpleWin()
     {
-       //Insertar Animacion morado ganador
 
-        yield return new WaitForSeconds(2f);
-
+        animator.SetTrigger("GanaMorado");
+        yield return new WaitForSeconds(3f);
+        animator.ResetTrigger("GanaMorado");
         endGamePanel.SetActive(true);
         Time.timeScale = 0f;
 
@@ -57,10 +58,10 @@ public class ScoreScript : MonoBehaviour
 
     IEnumerator BlueWin()
     {
-        //Insertar Animacion azul ganador
+        animator.SetTrigger("GanaCeleste");
 
-        yield return new WaitForSeconds(2f);
-
+        yield return new WaitForSeconds(3f);
+        animator.ResetTrigger("GanaCeleste");
         endGamePanel.SetActive(true);
         Time.timeScale = 0f;
 
