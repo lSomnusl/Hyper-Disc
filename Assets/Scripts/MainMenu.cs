@@ -29,6 +29,8 @@ public class MainMenu : MonoBehaviour
     public void GoMenu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+
     }
 
     public void Pausar()
