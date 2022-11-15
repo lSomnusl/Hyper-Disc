@@ -138,4 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreScriptInstance: {fileID: 3590501440741368600, guid: fb9406dc52f281f439a805ef7ac39a1b, type: 3}
   MaxSpeed: 20
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 3590501440741368607, guid: fb9406dc52f281f439a805ef7ac39a1b, type: 3}
